@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Build Stage"){
             when{
-                changelog 'build'
+                changelog 'Build'
             }
             steps{
                 echo "Yes, change log contains Build Message..."
