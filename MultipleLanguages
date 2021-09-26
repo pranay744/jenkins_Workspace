@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    stages{
+        stage("Build Stage"){
+            when{
+                changelog 'Python'
+            }
+            steps{
+                echo "Hello Team, this is Python Program."
+            }
+        }
+        stage("Deploy stage"){
+            when{
+                changelog "Shell Script"
+            }
+        steps{
+            sh '''
+            df -h
+            echo "This is Bash scripting
+            '''
+        }    
+        }
+    }
+}
